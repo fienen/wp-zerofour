@@ -1,12 +1,10 @@
-WP-ZeroFour
-===========
+#WP-ZeroFour
 
 WP-ZeroFour is a WordPress adaptation of of the responsive HTML template ZeroFour (v2.5) originally by @n33co (CC3.0 by; [html5up.net](http://html5up.net/)).
 
 Tested using the [Wordpress Content Framework](https://github.com/thequicksilver/wordpress-content-framework "Wordpress Content Framework").
 
-Original ZeroFour Readme Info
-=============================
+#Original ZeroFour Readme Info
 
 ZeroFour 2.5 by HTML5 UP
 html5up.net | @n33co
@@ -19,17 +17,17 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
 AJ
 n33.co [@n33co](https://twitter.com/n33co) [dribbble.com/n33](http://dribbble.com/n33)
 
-Credits:
+#Credits:
 
-	Images:
-		fotogrph [fotogrph.com](http://fotogrph.com)
+##Images:
+	fotogrph [fotogrph.com](http://fotogrph.com)
 
-	Icons
-		Font Awesome [http://fortawesome.github.com/Font-Awesome/](http://fortawesome.github.com/Font-Awesome/)
+##Icons
+	Font Awesome [http://fortawesome.github.com/Font-Awesome/](http://fortawesome.github.com/Font-Awesome/)
 
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		CSS3 Pie (css3pie.com)
-		jquery.dropotron (n33.co)
-		skelJS (skeljs.org)
+##Other:
+	jQuery (jquery.com)
+	html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+	CSS3 Pie (css3pie.com)
+	jquery.dropotron (n33.co)
+	skelJS (skeljs.org)
