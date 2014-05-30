@@ -32,6 +32,15 @@
  */
 function wp04_widgets_init() {
 	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'wpzerofour' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Appears in the left or right sidebar section of the site.', 'wpzerofour' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<header class="major"><h2 class="widget-title">',
+		'after_title'   => '</h2></header>',
+	) );
+	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'wpzerofour' ),
 		'id'            => 'footer-1',
 		'description'   => __( 'Appears in the left footer section of the site.', 'wpzerofour' ),

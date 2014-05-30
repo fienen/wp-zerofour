@@ -50,46 +50,15 @@ get_header(); ?>
 								
 									</div>
 								</div>
+								<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 								<div class="4u">
-									<div id="sidebar">
+									<div id="sidebar" class="primary-sidebar widget-area" role="complementary">
 
-										<!-- Sidebar -->
-									
-											<section>
-												<header class="major">
-													<h2>Subheading</h2>
-												</header>
-												<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. 
-												Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. 
-												Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi 
-												consequat etiam.</p>
-												<footer>
-													<a href="#" class="button fa fa-info-circle">Find out more</a>
-												</footer>
-											</section>
-
-											<section>
-												<header class="major">
-													<h2>Subheading</h2>
-												</header>
-												<ul class="style2">
-													<li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-													<li><a href="#">Ornare in hendrerit in lectus</a></li>
-													<li><a href="#">Semper mod quis eget mi dolore</a></li>
-													<li><a href="#">Quam turpis feugiat sit dolor</a></li>
-													<li><a href="#">Amet ornare in hendrerit in lectus</a></li>
-													<li><a href="#">Semper mod quisturpis nisi</a></li>
-													<li><a href="#">Consequat etiam lorem phasellus</a></li>
-													<li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-													<li><a href="#">Semper mod quisturpis nisi</a></li>
-												</ul>
-												<footer>
-													<a href="#" class="button fa fa-arrow-circle-o-right">Do Something</a>
-												</footer>
-											</section>
+										<?php dynamic_sidebar( 'sidebar-1' ); ?>
 								
-									</div>
-								</div>
+									</div>  <!-- #sidebar -->
+								</div>  <!-- .4u -->
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>
