@@ -18,25 +18,25 @@
 <head>
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="<?php bloginfo( 'description' ); ?>">
+	<meta name="keywords" content="">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css">
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.dropotron.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/config.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/skel.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/skel-panels.min.js"></script>
 	<noscript>
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/skel-noscript.css" />
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-desktop.css" />
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/skel-noscript.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-desktop.css">
 	</noscript>
-	<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie9.css"><![endif]-->
 	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie8.css" /><![endif]-->
-	<!--[if lte IE 7]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie7.css" /><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie7.css"><![endif]-->
 	<?php wp_head(); ?>
 </head>
 	<body <?php body_class('homepage'); ?>>
