@@ -10,7 +10,6 @@
  */
 ?>
 
-		<!-- Footer Wrapper -->
 			<div id="footer-wrapper">
 				<footer id="footer" class="container">
 					<div class="row">
@@ -65,16 +64,16 @@
 						
 						</div>  <!-- .6u -->
 					</div>  <!-- .row -->
-					
+
 					<div class="row">
 						<div class="12u">
 							<div id="copyright">
-								&copy; Untitled. All rights reserved | Images: <a href="http://fotogrph.com/">fotogrph</a> | Design: <a href="http://html5up.net/">HTML5 UP</a>
-							</div>
-						</div>
-					</div>
+								Site content &copy; <?php bloginfo( 'name' ); ?>. All rights reserved | Images: <a href="http://fotogrph.com/">fotogrph</a> | Theme: <a href="http://about.me/michaelfienen">Michael Fienen</a> | Design: <a href="http://html5up.net/">HTML5 UP</a>
+							</div>  <!-- #copyright -->
+						</div>  <!-- .12u -->
+					</div>  <!-- .row -->
 				</footer>
-			</div>
+			</div>  <!-- #footer-wrapper -->
 <?php wp_footer(); ?>
 	</body>
 </html>
