@@ -17,15 +17,15 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
 AJ
 n33.co [@n33co](https://twitter.com/n33co) [dribbble.com/n33](http://dribbble.com/n33)
 
-#Credits:
+##Credits:
 
-##Images:
+###Images:
 * fotogrph [fotogrph.com](http://fotogrph.com)
 
-##Icons
+###Icons
 * Font Awesome [http://fortawesome.github.com/Font-Awesome/](http://fortawesome.github.com/Font-Awesome/)
 
-##Other:
+###Other:
 * jQuery (jquery.com)
 * html5shiv.js (@afarkas @jdalton @jon_neal @rem)
 * CSS3 Pie (css3pie.com)
