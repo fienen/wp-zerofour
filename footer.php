@@ -15,64 +15,21 @@
 				<footer id="footer" class="container">
 					<div class="row">
 						<div class="3u">
-						
-							<!-- Links -->
-								<section>
-									<h2>Filler Links</h2>
-									<ul class="style2">
-										<li><a href="#">Quam turpis feugiat dolor</a></li>
-										<li><a href="#">Amet ornare in hendrerit </a></li>
-										<li><a href="#">Semper mod quisturpis nisi</a></li>
-										<li><a href="#">Consequat etiam phasellus</a></li>
-										<li><a href="#">Amet turpis, feugiat et</a></li>
-										<li><a href="#">Ornare hendrerit lectus</a></li>
-										<li><a href="#">Semper mod quis et dolore</a></li>
-										<li><a href="#">Amet ornare in hendrerit</a></li>
-										<li><a href="#">Consequat lorem phasellus</a></li>
-										<li><a href="#">Amet turpis, feugiat amet</a></li>
-										<li><a href="#">Semper mod quisturpis</a></li>
-									</ul>
-								</section>
-						
-						</div>
+						<?php if ( is_active_sidebar( 'footer-1' ) ) : 
+							dynamic_sidebar( 'footer-1' ); 
+						endif; ?>
+						</div>  <!-- .3u -->
+
 						<div class="3u">
-						
-							<!-- Links -->
-								<section>
-									<h2>More Filler</h2>
-									<ul class="style2">
-										<li><a href="#">Quam turpis feugiat dolor</a></li>
-										<li><a href="#">Amet ornare in in lectus</a></li>
-										<li><a href="#">Semper mod sed tempus nisi</a></li>
-										<li><a href="#">Consequat etiam phasellus</a></li>
-									</ul>
-								</section>
-						
-							<!-- Links -->
-								<section>
-									<h2>Even More Filler</h2>
-									<ul class="style2">
-										<li><a href="#">Quam turpis feugiat dolor</a></li>
-										<li><a href="#">Amet ornare hendrerit lectus</a></li>
-										<li><a href="#">Semper quisturpis nisi</a></li>
-										<li><a href="#">Consequat lorem phasellus</a></li>
-									</ul>
-								</section>
-						
-						</div>
+						<?php if ( is_active_sidebar( 'footer-2' ) ) : 
+							dynamic_sidebar( 'footer-2' ); 
+						endif; ?>
+						</div>  <!-- .3u -->
+
 						<div class="6u">
-						
-							<!-- About -->
-								<section>
-									<h2><strong>ZeroFour</strong> by HTML5 UP</h2>
-									<p>Hello! This is <strong>ZeroFour</strong>, a free, fully responsive HTML5 site
-									template by <a href="http://n33.co/">n33</a> for <a href="http://html5up.net/">HTML5 UP</a>.
-									It's <a href="http://html5up.net/license/">Creative Commons Attribution</a>
-									licensed so use it for any personal or commercial project (just credit us
-									for the design!)</p>
-									<a href="http://html5up.net/" class="button alt fa fa-arrow-circle-o-right">More @ HTML5Up.net</a>
-								</section>
-						
+						<?php if ( is_active_sidebar( 'footer-3' ) ) : 
+							dynamic_sidebar( 'footer-3' ); 
+						endif; ?>
 							<!-- Contact -->
 								<section>
 									<h2>Get in touch</h2>
@@ -106,8 +63,9 @@
 									</div>
 								</section>
 						
-						</div>
-					</div>
+						</div>  <!-- .6u -->
+					</div>  <!-- .row -->
+					
 					<div class="row">
 						<div class="12u">
 							<div id="copyright">
