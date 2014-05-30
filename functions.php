@@ -60,4 +60,27 @@ function wp04_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'wp04_widgets_init' );
+
+/**
+ * Add a theme settings page.
+ *
+ * @since WP-ZeroFour 1.0
+ */
+function wp04_settings_page() {
 ?>
+<div>
+	<h2>WP-ZeroFour Theme Settings</h2>
+	<form action="options.php" method="post">
+<?php settings_fields('plugin_options'); ?>
+<?php do_settings_sections('plugin'); ?>
+ 
+		<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
+	</form>
+</div>
+<?php }
+
+
+function wp04_settings_add_page() {
+	add_submenu_page( 'themes.php', 'WP-ZeroFour Settings', 'WP-ZeroFour Settings', 'manage_options', 'wp-zerofour-settings', 'wp04_settings_page' );
+}
+add_action('admin_menu', 'wp04_settings_add_page');
