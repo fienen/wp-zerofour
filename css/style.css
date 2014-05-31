@@ -1,0 +1,2 @@
+/* Because wordpress doesn't want the main CSS in a subfolder, and skelJS wants all the CSS in a common prefixed path */
+@import url('../style.css');
