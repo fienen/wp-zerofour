@@ -31,7 +31,7 @@ get_header(); ?>
 								<div class="row">
 									<div class="4u">
 										<section>
-											<span class="image image-full"><img src="images/pic01.jpg" alt="" /></span>
+											<span class="image image-full"><img src="/zerofour/wp-content/themes/wp-zerofour/images/stock/pic01.jpg" alt="" /></span>
 											<header class="second fa fa-user">
 												<h3>OMFG Whats That</h3>
 												<span class="byline">Nevermind its just a wall lol</span>
@@ -40,7 +40,7 @@ get_header(); ?>
 									</div>
 									<div class="4u">
 										<section>
-											<span class="image image-full"><img src="images/pic02.jpg" alt="" /></span>
+											<span class="image image-full"><img src="/zerofour/wp-content/themes/wp-zerofour/images/stock/pic02.jpg" alt="" /></span>
 											<header class="second fa fa-cog">
 												<h3>Really Close Up</h3>
 												<span class="byline">This looks pretty harmless</span>
@@ -49,7 +49,7 @@ get_header(); ?>
 									</div>
 									<div class="4u">
 										<section>
-											<span class="image image-full"><img src="images/pic03.jpg" alt="" /></span>
+											<span class="image image-full"><img src="/zerofour/wp-content/themes/wp-zerofour/images/stock/pic03.jpg" alt="" /></span>
 											<header class="second fa fa-bar-chart-o">
 												<h3>Pretty Blue LEDs</h3>
 												<span class="byline">Just so many of them man</span>
@@ -122,7 +122,7 @@ get_header(); ?>
 											
 											<!-- Excerpt -->
 												<article class="box-excerpt">
-													<a href="#" class="image image-left"><img src="images/pic04.jpg" alt="" /></a>
+													<a href="#" class="image image-left"><img src="/zerofour/wp-content/themes/wp-zerofour/images/stock/pic04.jpg" alt="" /></a>
 													<div>
 														<header>
 															<span class="date">December 20, 2012</span>
@@ -136,7 +136,7 @@ get_header(); ?>
 
 											<!-- Excerpt -->
 												<article class="box-excerpt">
-													<a href="#" class="image image-left"><img src="images/pic05.jpg" alt="" /></a>
+													<a href="#" class="image image-left"><img src="/zerofour/wp-content/themes/wp-zerofour/images/stock/pic05.jpg" alt="" /></a>
 													<div>
 														<header>
 															<span class="date">December 15, 2012</span>
@@ -150,7 +150,7 @@ get_header(); ?>
 
 											<!-- Excerpt -->
 												<article class="box-excerpt">
-													<a href="#" class="image image-left"><img src="images/pic06.jpg" alt="" /></a>
+													<a href="#" class="image image-left"><img src="/zerofour/wp-content/themes/wp-zerofour/images/stock/pic06.jpg" alt="" /></a>
 													<div>
 														<header>
 															<span class="date">December 12, 2012</span>
@@ -170,7 +170,7 @@ get_header(); ?>
 										<section class="box-spotlight">
 											<h2 class="fa fa-file-text-o">Spotlight</h2>
 											<article>
-												<a href="#" class="image image-full"><img src="images/pic07.jpg" alt=""></a>
+												<a href="#" class="image image-full"><img src="/zerofour/wp-content/themes/wp-zerofour/images/stock/pic07.jpg" alt=""></a>
 												<header>
 													<h3><a href="#">Why staplers matter</a></h3>
 													<span class="byline">They hold things together</span>
