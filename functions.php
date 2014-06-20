@@ -75,21 +75,44 @@ add_action( 'widgets_init', 'wp04_widgets_init' );
  *
  * @since WP-ZeroFour 1.0
  */
+require_once ( get_stylesheet_directory() . '/theme-options.php' );
+/*
 function wp04_settings_page() {
-?>
-<div>
+	// Check that the user is allowed to update options
+	if (!current_user_can('manage_options')) :
+		wp_die('You do not have sufficient permissions to access this page.');
+	else : ?>
+<div id="theme-options-wrap">
+	<div class="icon32" id="icon-tools"> <br /> </div>
 	<h2>WP-ZeroFour Theme Settings</h2>
-	<form action="options.php" method="post">
-<?php settings_fields('plugin_options'); ?>
-<?php do_settings_sections('plugin'); ?>
- 
+	<form action="options.php" method="post" enctype="multipart/form-data">
+<?php settings_fields('wp04_theme_options'); ?>
+<?php do_settings_sections(__FILE__); ?>
 		<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
 	</form>
 </div>
-<?php }
+<?php endif;
+}
 
+function wp04_register_build_fields() {
+	register_setting( 'wp04_theme_options', 'wp04_theme_options', 'validate_setting'); 
+	add_settings_section('global_settings', 'Global Settings', 'section_global', __FILE__);
+	function section_global() {}
+	add_settings_field('gaID', 'Google Analytics Profile ID', 'gaID_setting', __FILE__, 'section_global');
+} 
+add_action( 'admin_init', 'wp04_register_build_fields' );
+
+function validate_setting($theme_options) {
+	return $theme_options;
+}
+
+function gaID_setting() {
+	$options = get_option('wp04_theme_options');  
+	echo "<input name='theme_options[gaID_setting]' type='text' value='{$options['gaID_setting']}' />";
+}
 
 function wp04_settings_add_page() {
-	add_submenu_page( 'themes.php', 'WP-ZeroFour Settings', 'WP-ZeroFour Settings', 'manage_options', 'wp-zerofour-settings', 'wp04_settings_page' );
+	add_theme_page( 'WP-ZeroFour Settings', 'WP-ZeroFour Settings', 'manage_options', 'wp-zerofour-settings', 'wp04_settings_page' );
 }
 add_action('admin_menu', 'wp04_settings_add_page');
+*/
