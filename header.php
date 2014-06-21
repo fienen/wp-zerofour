@@ -23,7 +23,7 @@
 	<meta name="keywords" content="">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css">
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.dropotron.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/config.js"></script>
@@ -35,7 +35,7 @@
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-desktop.css">
 	</noscript>
 	<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie9.css"><![endif]-->
-	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 8]><script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 7]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie7.css"><![endif]-->
 	<?php wp_head(); ?>
 </head>
@@ -46,15 +46,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="12u">
-						
-							<!-- Header -->
+
 								<header id="header">
 									<div class="inner">
 									
-										<!-- Logo -->
 											<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo"><?php bloginfo( 'name' ); ?></a></h1>
 										
-										<!-- Nav -->
 											<nav id="nav">
 												<ul>
 													<li class="current_page_item"><a href="index.html">Home</a></li>
@@ -79,10 +76,9 @@
 													<li><a href="right-sidebar.html">Right Sidebar</a></li>
 													<li><a href="no-sidebar.html">No Sidebar</a></li>
 												</ul>
-											</nav>
-									
-									</div>
-								</header>
+											</nav>  <!-- #nav -->
+									</div>  <!-- .inner -->
+								</header>  <!-- #header -->
 
 							<!-- Banner -->
 								<div id="banner">
