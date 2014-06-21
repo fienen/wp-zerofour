@@ -53,6 +53,7 @@
 											<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo"><?php bloginfo( 'name' ); ?></a></h1>
 										
 											<nav id="nav">
+											<!--
 												<ul>
 													<li class="current_page_item"><a href="index.html">Home</a></li>
 													<li>
@@ -76,6 +77,8 @@
 													<li><a href="right-sidebar.html">Right Sidebar</a></li>
 													<li><a href="no-sidebar.html">No Sidebar</a></li>
 												</ul>
+											-->
+											<?php wp_nav_menu( array( 'theme_location' => 'Top Nav' ) ); ?>
 											</nav>  <!-- #nav -->
 									</div>  <!-- .inner -->
 								</header>  <!-- #header -->

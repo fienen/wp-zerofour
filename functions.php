@@ -71,6 +71,13 @@ function wp04_widgets_init() {
 add_action( 'widgets_init', 'wp04_widgets_init' );
 
 /**
+ * Register navigation menus.
+ *
+ * @since WP-ZeroFour 1.0
+ */
+register_nav_menu( 'Top Nav', 'Primary navigation along the top of the template' );
+
+/**
  * Add a theme settings page.
  *
  * @since WP-ZeroFour 1.0
