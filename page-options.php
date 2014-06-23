@@ -60,7 +60,7 @@ function wp04_meta_box_callback( $post ) {
     <p><label class="screen-reader-text" for="home_button_icon"><?php echo _e( 'Button Icon', 'wpzerofour' ); ?></label>
         <select id="home_button_icon" name="home_button_icon">
             <option value="">-<?php echo _e( 'None', 'wpzerofour' ); ?>-</option>
-            <option value="arrow"<?php if( $buttonIcon == 'arrow' ) : ?> selected<?php endif; ?>>Arrow</option>
+            <option value="arrow-o"<?php if( $buttonIcon == 'arrow-o' ) : ?> selected<?php endif; ?>>Arrow</option>
             <option value="chart"<?php if( $buttonIcon == 'chart' ) : ?> selected<?php endif; ?>>Chart</option>
             <option value="check"<?php if( $buttonIcon == 'check' ) : ?> selected<?php endif; ?>>Checkmark</option>
             <option value="cog"<?php if( $buttonIcon == 'cog' ) : ?> selected<?php endif; ?>>Cog</option>

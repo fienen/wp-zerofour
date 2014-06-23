@@ -52,8 +52,6 @@ function wp04_admin_tabs( $current = 'general' ) {
  * Create the options page
  */
 function wp04_theme_options_do_page() {
-	global $select_options, $radio_options;
-
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
 
@@ -128,7 +126,56 @@ function wp04_theme_options_do_page() {
 			break; 
 		case 'homepage' : 
 		?>
+			<h3 class="title"><?php _e( 'Centerpiece Settings', 'wpzerofour' ); ?></h3>
 
+			<table class="form-table">
+				<tbody>
+					<tr>
+						<th scope="row"><label class="description" for="wp04_theme_options[centerpiece_headline]"><?php _e( 'Main Headline', 'wpzerofour' ); ?></label></td>
+						<td><input id="wp04_theme_options[centerpiece_headline]" class="regular-text" type="text" name="wp04_theme_options[centerpiece_headline]" value="<?php esc_attr_e( $options['centerpiece_headline'] ); ?>" /></td>
+					</tr>
+					<tr>
+						<th scope="row"><label class="description" for="wp04_theme_options[centerpiece_subheading]"><?php _e( 'Subheading', 'wpzerofour' ); ?></label></td>
+						<td><input id="wp04_theme_options[centerpiece_subheading]" class="regular-text" type="text" name="wp04_theme_options[centerpiece_subheading]" value="<?php esc_attr_e( $options['centerpiece_subheading'] ); ?>" /></td>
+					</tr>
+					<tr>
+						<th scope="row"><label class="description" for="wp04_theme_options[centerpiece_button_label]"><?php _e( 'Button Label', 'wpzerofour' ); ?></label></td>
+						<td>
+							<input id="wp04_theme_options[centerpiece_button_label]" class="regular-text" type="text" name="wp04_theme_options[centerpiece_button_label]" value="<?php esc_attr_e( $options['centerpiece_button_label'] ); ?>" />
+							<span class="description"><?php _e('Leave blank to exclude button.', 'wpzerofour' ); ?></span>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label class="description" for="wp04_theme_options[centerpiece_button_link]"><?php _e( 'Button Link', 'wpzerofour' ); ?></label></td>
+						<td><input id="wp04_theme_options[centerpiece_button_link]" class="regular-text" type="text" name="wp04_theme_options[centerpiece_button_link]" value="<?php echo esc_url( $options['centerpiece_button_link'] ); ?>" /></td>
+					</tr>
+					<tr>
+						<th scope="row"><label class="description" for="wp04_theme_options[centerpiece_button_icon]"><?php echo _e( 'Button Icon', 'wpzerofour' ); ?></label></td>
+						<td>
+							<select id="wp04_theme_options[centerpiece_button_icon]" name="wp04_theme_options[centerpiece_button_icon]">
+								<option value="">-<?php echo _e( 'None', 'wpzerofour' ); ?>-</option>
+								<option value="arrow-o"<?php if( $options['centerpiece_button_icon'] == 'arrow-o' ) : ?> selected<?php endif; ?>>Arrow</option>
+								<option value="chart"<?php if( $options['centerpiece_button_icon'] == 'chart' ) : ?> selected<?php endif; ?>>Chart</option>
+								<option value="check"<?php if( $options['centerpiece_button_icon'] == 'check' ) : ?> selected<?php endif; ?>>Checkmark</option>
+								<option value="cog"<?php if( $options['centerpiece_button_icon'] == 'cog' ) : ?> selected<?php endif; ?>>Cog</option>
+								<option value="file"<?php if( $options['centerpiece_button_icon'] == 'file' ) : ?> selected<?php endif; ?>>File</option>
+								<option value="info"<?php if( $options['centerpiece_button_icon'] == 'info' ) : ?> selected<?php endif; ?>>Info</option>
+								<option value="file-text"<?php if( $options['centerpiece_button_icon'] == 'file-text' ) : ?> selected<?php endif; ?>>Text</option>
+								<option value="user"<?php if( $options['centerpiece_button_icon'] == 'user' ) : ?> selected<?php endif; ?>>User</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label class="description" for="wp04_theme_options[centerpiece_button_type]"><?php echo _e( 'Button Type', 'wpzerofour' ); ?></label></td>
+						<td>
+							<select id="wp04_theme_options[centerpiece_button_type]" name="wp04_theme_options[centerpiece_button_type]">
+								<option value="primary"<?php if( $options['centerpiece_button_type'] == 'primary' ) : ?> selected<?php endif; ?>>Primary</option>
+								<option value="secondary"<?php if( $options['centerpiece_button_type'] == 'secondary' ) : ?> selected<?php endif; ?>>Secondary</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		<?php 
 			break; 
 		case 'media' : 

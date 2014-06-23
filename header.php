@@ -83,12 +83,36 @@
 									</div>  <!-- .inner -->
 								</header>  <!-- #header -->
 
-<?php if( is_home() ) : ?>
+<?php 
+if( is_home() ) : 
+	$wp04_theme_options       = get_option( 'wp04_theme_options' );
+	$centerpiece_headline     = $wp04_theme_options[ 'centerpiece_headline' ];
+	$centerpiece_subheading   = $wp04_theme_options[ 'centerpiece_subheading' ];
+	$centerpiece_button_label = $wp04_theme_options[ 'centerpiece_button_label' ];
+	$centerpiece_button_link  = $wp04_theme_options[ 'centerpiece_button_link' ];
+	$centerpiece_button_type  = $wp04_theme_options[ 'centerpiece_button_type' ];
+	$centerpiece_button_icon  = $wp04_theme_options[ 'centerpiece_button_icon' ];
+?>
 								<div id="banner">
-									<h2><strong>ZeroFour:</strong> A free responsive site template<br />
-									built on HTML5 and CSS3 by <a href="http://html5up.net">HTML5 UP</a></h2>
-									<p>Does this statement make you want to click the shiny blue button?</p>
-									<a href="#" class="button big fa fa-check-circle">Yes it does</a>
+	<?php if( !empty( $centerpiece_headline ) ) : ?>
+									<h2><?php echo $centerpiece_headline; ?></h2>
+	<?php 
+	endif; 
+	if( !empty( $centerpiece_subheading ) ) :
+	?>
+									<p><?php echo $centerpiece_subheading; ?></p>
+	<?php 
+	endif; 
+	if( !empty( $centerpiece_button_label ) ) :
+		if( !empty( $centerpiece_button_icon ) ) :
+			$centerpiece_button_class = ' fa fa-' . $centerpiece_button_icon . '-circle';
+		endif;
+		if( !empty( $centerpiece_button_type ) && $centerpiece_button_type == 'secondary' ) :
+			$centerpiece_button_class = ' alt'. $centerpiece_button_class;
+		endif;
+	?>
+									<a href="<?php echo $centerpiece_button_link; ?>" class="button big<?php echo $centerpiece_button_class; ?>"><?php echo $centerpiece_button_label; ?></a>
+	<?php endif; ?>
 								</div>
 <?php endif; ?>
 						</div>
