@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Default Page Template (Right Sidebar)
+ * Template Name: Right Sidebar Page
  *
  * @package WordPress
  * @subpackage WP-ZeroFour

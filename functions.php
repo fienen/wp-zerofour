@@ -85,6 +85,7 @@ register_nav_menu( 'Top Nav', 'Primary navigation along the top of the template'
 add_theme_support( 'post-thumbnails' ); 
 add_image_size( 'featured-thumb', 367, 168, true ); 
 add_image_size( 'blog-thumb', 180, 167, true ); 
+add_image_size( 'page-banner', 1200 ); 
 
 /**
  * Add a theme settings page.

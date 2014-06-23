@@ -16,19 +16,25 @@
 
 	<div class="entry-content">
 		<div class="featured-image">
-			<span class="image image-full"><img src="/zerofour/wp-content/themes/wp-zerofour/images/stock/pic08.jpg" alt="" /></span>
+			<span class="image image-full">
+<?php
+	if ( has_post_thumbnail() ) :
+		the_post_thumbnail( 'page-banner' );
+	endif;
+?>
+			</span>
 		</div>  <!-- .featured-image -->
+<?php
+the_content();
 
-		<?php
-			the_content();
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'wpzerofour' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-			) );
+wp_link_pages( array(
+	'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'wpzerofour' ) . '</span>',
+	'after'       => '</div>',
+	'link_before' => '<span>',
+	'link_after'  => '</span>',
+) );
 
-			edit_post_link( __( 'Edit', 'wpzerofour' ), '<span class="edit-link">', '</span>' );
-		?>
+edit_post_link( __( 'Edit', 'wpzerofour' ), '<span class="edit-link">', '</span>' );
+?>
 	</div>  <!-- .entry-content -->
 </article>  <!-- #post-post-<?php the_ID(); ?> -->

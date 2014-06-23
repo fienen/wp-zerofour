@@ -39,7 +39,7 @@
 	<!--[if lte IE 7]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie7.css"><![endif]-->
 	<?php wp_head(); ?>
 </head>
-	<body <?php body_class('homepage'); ?>>
+	<body <?php if( is_home() ) : body_class('homepage'); else: body_class(); endif; ?>>
 
 		<!-- Header Wrapper -->
 			<div id="header-wrapper">
@@ -83,14 +83,14 @@
 									</div>  <!-- .inner -->
 								</header>  <!-- #header -->
 
-							<!-- Banner -->
+<?php if( is_home() ) : ?>
 								<div id="banner">
 									<h2><strong>ZeroFour:</strong> A free responsive site template<br />
 									built on HTML5 and CSS3 by <a href="http://html5up.net">HTML5 UP</a></h2>
 									<p>Does this statement make you want to click the shiny blue button?</p>
 									<a href="#" class="button big fa fa-check-circle">Yes it does</a>
 								</div>
-
+<?php endif; ?>
 						</div>
 					</div>
 				</div>
