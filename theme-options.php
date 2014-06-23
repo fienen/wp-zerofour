@@ -63,6 +63,22 @@ $radio_options = array(
 );
 
 /**
+ * Create tab navigation for settings
+ *
+ * @since WP-ZeroFour 1.0
+ */
+function wp04_admin_tabs( $current = 'homepage' ) {
+	$tabs = array( 'general' => 'General',  'homepage' => 'Home Settings', 'media' => 'Media Section', 'contact' => 'Contact' );
+	echo '<div id="icon-themes" class="icon32"><br></div>';
+	echo '<h2 class="nav-tab-wrapper">';
+	foreach( $tabs as $tab => $name ){
+		$class = ( $tab == $current ) ? ' nav-tab-active' : '';
+		echo "<a class='nav-tab$class' href='?page=theme-settings&tab=$tab'>$name</a>";
+	}
+	echo '</h2>';
+}
+
+/**
  * Create the options page
  */
 function wp04_theme_options_do_page() {
@@ -78,6 +94,8 @@ function wp04_theme_options_do_page() {
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'wpzerofour' ); ?></strong></p></div>
 		<?php endif; ?>
+
+		<?php wp04_admin_tabs(); ?>
 
 		<form method="post" action="options.php" enctype="multipart/form-data">
 			<?php settings_fields( 'wp04_options' ); ?>
