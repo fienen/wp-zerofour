@@ -205,6 +205,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		.image img
 		{
 			display: block;
+			height: auto;
 			width: 100%;
 			border-radius: 8px;
 		}

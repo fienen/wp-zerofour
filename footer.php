@@ -76,7 +76,7 @@
 			</div>  <!-- #footer-wrapper -->
 <?php
 $gaID = get_option( 'gaID' );
-if( isset( $gaID ) :
+if( isset( $gaID ) ) :
 ?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

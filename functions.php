@@ -78,6 +78,15 @@ add_action( 'widgets_init', 'wp04_widgets_init' );
 register_nav_menu( 'Top Nav', 'Primary navigation along the top of the template' );
 
 /**
+ * Image settings for the theme.
+ *
+ * @since WP-ZeroFour 1.0
+ */
+add_theme_support( 'post-thumbnails' ); 
+add_image_size( 'featured-thumb', 367, 168, true ); 
+add_image_size( 'blog-thumb', 180, 167, true ); 
+
+/**
  * Add a theme settings page.
  *
  * @since WP-ZeroFour 1.0
