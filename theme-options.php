@@ -4,6 +4,21 @@ add_action( 'admin_init', 'wp04_theme_options_init' );
 add_action( 'admin_menu', 'wp04_theme_options_add_page' );
 
 /**
+ * Prep the necessary scripts for image uploads.
+ *
+ * @since WP-ZeroFour 1.0
+ */
+function wp04_options_enqueue_scripts() {
+	if ( 'appearance_page_wp04_theme_options' == get_current_screen() -> id ) :
+		wp_enqueue_script('thickbox');
+		wp_enqueue_style('thickbox');
+		wp_enqueue_script('media-upload');
+	endif;
+}
+add_action( 'admin_enqueue_scripts', 'wp04_options_enqueue_scripts' );
+
+
+/**
  * Init plugin options to white list our options
  */
 function wp04_theme_options_init(){
@@ -18,62 +33,17 @@ function wp04_theme_options_add_page() {
 }
 
 /**
- * Create arrays for our select and radio options
- */
-$select_options = array(
-	'0' => array(
-		'value' =>	'0',
-		'label' => __( 'Zero', 'sampletheme' )
-	),
-	'1' => array(
-		'value' =>	'1',
-		'label' => __( 'One', 'sampletheme' )
-	),
-	'2' => array(
-		'value' => '2',
-		'label' => __( 'Two', 'sampletheme' )
-	),
-	'3' => array(
-		'value' => '3',
-		'label' => __( 'Three', 'sampletheme' )
-	),
-	'4' => array(
-		'value' => '4',
-		'label' => __( 'Four', 'sampletheme' )
-	),
-	'5' => array(
-		'value' => '3',
-		'label' => __( 'Five', 'sampletheme' )
-	)
-);
-
-$radio_options = array(
-	'yes' => array(
-		'value' => 'yes',
-		'label' => __( 'Yes', 'sampletheme' )
-	),
-	'no' => array(
-		'value' => 'no',
-		'label' => __( 'No', 'sampletheme' )
-	),
-	'maybe' => array(
-		'value' => 'maybe',
-		'label' => __( 'Maybe', 'sampletheme' )
-	)
-);
-
-/**
  * Create tab navigation for settings
  *
  * @since WP-ZeroFour 1.0
  */
-function wp04_admin_tabs( $current = 'homepage' ) {
+function wp04_admin_tabs( $current = 'general' ) {
 	$tabs = array( 'general' => 'General',  'homepage' => 'Home Settings', 'media' => 'Media Section', 'contact' => 'Contact' );
 	echo '<div id="icon-themes" class="icon32"><br></div>';
 	echo '<h2 class="nav-tab-wrapper">';
 	foreach( $tabs as $tab => $name ){
 		$class = ( $tab == $current ) ? ' nav-tab-active' : '';
-		echo "<a class='nav-tab$class' href='?page=theme-settings&tab=$tab'>$name</a>";
+		echo "<a class='nav-tab$class' href='?page=wp04_theme_options&tab=$tab'>$name</a>";
 	}
 	echo '</h2>';
 }
@@ -95,13 +65,36 @@ function wp04_theme_options_do_page() {
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'wpzerofour' ); ?></strong></p></div>
 		<?php endif; ?>
 
-		<?php wp04_admin_tabs(); ?>
+		<?php if ( isset ( $_GET['tab'] ) ) wp04_admin_tabs($_GET['tab']); else wp04_admin_tabs('general'); ?>
 
 		<form method="post" action="options.php" enctype="multipart/form-data">
 			<?php settings_fields( 'wp04_options' ); ?>
 			<?php $options = get_option( 'wp04_theme_options' ); ?>
+	<?php 
+	if ( isset ( $_GET['tab'] ) ) 
+		$tab = $_GET['tab']; 
+	else 
+		$tab = 'general'; 
 
-			<h3 class="title">Analytics and Tracking</h3>
+	switch ( $tab ) :
+		case 'general' :
+	?>
+			<h3 class="title"><?php _e( 'Layout Options', 'wpzerofour' ); ?></h3>
+
+			<table class="form-table">
+				<tbody>
+					<tr>
+						<th scope="row"><label class="description" for="wp04_theme_options[header_img]"><?php _e( 'Header Background Image', 'wpzerofour' ); ?></label></td>
+						<td>
+							<input id="wp04_theme_options[header_img]" class="regular-text" type="text" name="wp04_theme_options[header_img]" value="<?php echo esc_url( $options['header_img'] ); ?>" /> 
+							<input id="upload_header_img_button" type="button" class="button" value="<?php _e( 'Upload Image', 'wpzerofour' ); ?>" />
+							<span class="description"><?php _e('Ideal size is 1400x651.', 'wpzerofour' ); ?></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3 class="title"><?php _e( 'Analytics and Tracking', 'wpzerofour' ); ?></h3>
 
 			<table class="form-table">
 				<tbody>
@@ -116,6 +109,35 @@ function wp04_theme_options_do_page() {
 				</tbody>
 			</table>
 
+			<script>
+			jQuery(document).ready(function($) {
+				$('#upload_header_img_button').click(function() {
+					tb_show('Upload a header image', 'media-upload.php?TB_iframe=true', false);
+
+					window.send_to_editor = function(html) {
+						var image_url = $('img',html).attr('src');
+						$('#upload_header_img_button').prev('input').val(image_url);
+						tb_remove();
+					}
+
+					return false;
+				});
+			});
+			</script>
+		<?php 
+			break; 
+		case 'homepage' : 
+		?>
+
+		<?php 
+			break; 
+		case 'media' : 
+		?>
+
+		<?php 
+			break; 
+		case 'contact' : 
+		?>
 			<h3 class="title">Contact Information</h3>
 			
 			<table class="form-table">
@@ -155,7 +177,10 @@ function wp04_theme_options_do_page() {
 					</tr>
 				</tbody>
 			</table>
-
+	<?php 
+			break; 
+	endswitch; 
+	?>
 			<p class="submit">
 				<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'wpzerofour' ); ?>" />
 			</p>
