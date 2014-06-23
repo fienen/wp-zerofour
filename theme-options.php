@@ -116,18 +116,24 @@ function wp04_theme_options_do_page() {
 					</tr>
 					<tr>
 						<th scope="row"><label class="description" for="wp04_theme_options[social-link-1-label]"><?php _e( 'Social Link 1', 'wpzerofour' ); ?></label></td>
-						<td><input id="wp04_theme_options[social-link-1-label]" class="regular-text" type="text" name="wp04_theme_options[social-link-1-label]" value="<?php esc_attr_e( $options['social-link-1-label'] ); ?>" placeholder="<?php _e( 'link name', 'wpzerofour' ); ?>" /></td>
-						<td><input id="wp04_theme_options[social-link-1-href]" class="regular-text" type="text" name="wp04_theme_options[social-link-1-href]" value="<?php esc_attr_e( $options['social-link-1-href'] ); ?>" placeholder="<?php _e( 'link url', 'wpzerofour' ); ?>" /></td>
+						<td>
+							<input id="wp04_theme_options[social-link-1-label]" class="regular-text" type="text" name="wp04_theme_options[social-link-1-label]" value="<?php esc_attr_e( $options['social-link-1-label'] ); ?>" placeholder="<?php _e( 'link name', 'wpzerofour' ); ?>" /> 
+							<input id="wp04_theme_options[social-link-1-href]" class="regular-text" type="text" name="wp04_theme_options[social-link-1-href]" value="<?php esc_attr_e( $options['social-link-1-href'] ); ?>" placeholder="<?php _e( 'link url', 'wpzerofour' ); ?>" />
+						</td>
 					</tr>
 					<tr>
 						<th scope="row"><label class="description" for="wp04_theme_options[social-link-2-label]"><?php _e( 'Social Link 2', 'wpzerofour' ); ?></label></td>
-						<td><input id="wp04_theme_options[social-link-2-label]" class="regular-text" type="text" name="wp04_theme_options[social-link-2-label]" value="<?php esc_attr_e( $options['social-link-3-label'] ); ?>" placeholder="<?php _e( 'link name', 'wpzerofour' ); ?>" /></td>
-						<td><input id="wp04_theme_options[social-link-2-href]" class="regular-text" type="text" name="wp04_theme_options[social-link-2-href]" value="<?php esc_attr_e( $options['social-link-2-href'] ); ?>" placeholder="<?php _e( 'link url', 'wpzerofour' ); ?>" /></td>
+						<td>
+							<input id="wp04_theme_options[social-link-2-label]" class="regular-text" type="text" name="wp04_theme_options[social-link-2-label]" value="<?php esc_attr_e( $options['social-link-3-label'] ); ?>" placeholder="<?php _e( 'link name', 'wpzerofour' ); ?>" /> 
+							<input id="wp04_theme_options[social-link-2-href]" class="regular-text" type="text" name="wp04_theme_options[social-link-2-href]" value="<?php esc_attr_e( $options['social-link-2-href'] ); ?>" placeholder="<?php _e( 'link url', 'wpzerofour' ); ?>" />
+						</td>
 					</tr>
 					<tr>
 						<th scope="row"><label class="description" for="wp04_theme_options[social-link-1-label]"><?php _e( 'Social Link 3', 'wpzerofour' ); ?></label></td>
-						<td><input id="wp04_theme_options[social-link-3-label]" class="regular-text" type="text" name="wp04_theme_options[social-link-3-label]" value="<?php esc_attr_e( $options['social-link-3-label'] ); ?>" placeholder="<?php _e( 'link name', 'wpzerofour' ); ?>" /></td>
-						<td><input id="wp04_theme_options[social-link-3-href]" class="regular-text" type="text" name="wp04_theme_options[social-link-3-href]" value="<?php esc_attr_e( $options['social-link-3-href'] ); ?>" placeholder="<?php _e( 'link url', 'wpzerofour' ); ?>" /></td>
+						<td>
+							<input id="wp04_theme_options[social-link-3-label]" class="regular-text" type="text" name="wp04_theme_options[social-link-3-label]" value="<?php esc_attr_e( $options['social-link-3-label'] ); ?>" placeholder="<?php _e( 'link name', 'wpzerofour' ); ?>" /> 
+							<input id="wp04_theme_options[social-link-3-href]" class="regular-text" type="text" name="wp04_theme_options[social-link-3-href]" value="<?php esc_attr_e( $options['social-link-3-href'] ); ?>" placeholder="<?php _e( 'link url', 'wpzerofour' ); ?>" />
+						</td>
 					</tr>
 				</tbody>
 			</table>
