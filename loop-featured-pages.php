@@ -11,6 +11,7 @@ $args1 = array(
 	'meta_key'    => '_home_button_show',
 	'meta_value'  => 'true',
 	'numberposts' => 2,
+	'orderby'     => 'meta_value_num',
 	'post_type'   => 'page'
 );
 $featured_pages = get_posts( $args ) );
