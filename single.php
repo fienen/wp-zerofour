@@ -16,15 +16,17 @@ get_header(); ?>
 									<div id="content skel-cell-important">
 <?php
 	// Start the Loop.
-	while ( have_posts() ) : the_post();
-		// Include the page content template.
-		get_template_part( 'content', 'page' );
+	if( have_posts() ) :
+		while ( have_posts() ) : the_post();
+			// Include the page content template.
+			get_template_part( 'content', get_post_format() );
 
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) {
-			comments_template();
-		}
-	endwhile;
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
+		endwhile;
+	endif;
 ?>
 									</div>  <!-- #content.skel-cell-important -->
 								</div>  <!-- .8u -->
