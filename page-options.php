@@ -17,7 +17,6 @@
  */
 function wp04_add_meta_box() {
     $screens = array( 'page' );
-
     foreach ( $screens as $screen ) {
         add_meta_box(
             'wp04_settings',
@@ -44,11 +43,11 @@ function wp04_meta_box_callback( $post ) {
      * from the database and use the value for the form.
      */
     $buttonLabel = get_post_meta( $post->ID, '_home_button_label', true );
-    $buttonIcon  = get_post_meta( $post->ID, '_home_button_icon' , true );
-    $buttonType  = get_post_meta( $post->ID, '_home_button_type' , true );
-    $buttonShow  = get_post_meta( $post->ID, '_home_button_show' , true );
-	$buttonPos   = get_post_meta( $post->ID, '_home_button_pos' , true );
-    $subheading  = get_post_meta( $post->ID, '_subheading' , true );
+    $buttonIcon  = get_post_meta( $post->ID, '_home_button_icon',  true );
+    $buttonType  = get_post_meta( $post->ID, '_home_button_type',  true );
+    $buttonShow  = get_post_meta( $post->ID, '_home_button_show',  true );
+	$buttonPos   = get_post_meta( $post->ID, '_home_button_pos',   true );
+    $subheading  = get_post_meta( $post->ID, '_subheading' ,       true );
 ?>
     <p><strong><?php echo _e( 'Page Subheading', 'wpzerofour' ); ?></strong></p>
     <p><label class="screen-reader-text" for="subheading"><?php echo _e( 'Page Subheading', 'wpzerofour' ); ?></label>
@@ -74,6 +73,7 @@ function wp04_meta_box_callback( $post ) {
     <p><strong><?php echo _e( 'Button Type', 'wpzerofour' ); ?></strong></p>
     <p><label class="screen-reader-text" for="home_button_type"><?php echo _e( 'Button Type', 'wpzerofour' ); ?></label>
         <select id="home_button_type" name="home_button_type">
+			<option value="">-</option>
             <option value="primary"<?php if( $buttonType == 'primary' ) : ?> selected<?php endif; ?>>Primary</option>
             <option value="secondary"<?php if( $buttonType == 'secondary' ) : ?> selected<?php endif; ?>>Secondary</option>
         </select>
@@ -81,6 +81,7 @@ function wp04_meta_box_callback( $post ) {
 	<p><strong><?php echo _e( 'Home Position', 'wpzerofour' ); ?></strong></p>
     <p><label class="screen-reader-text" for="home_button_pos"><?php echo _e( 'Home Position', 'wpzerofour' ); ?></label>
         <select id="home_button_pos" name="home_button_pos">
+			<option value="">-</option>
             <option value="1"<?php if( $buttonPos == '1' ) : ?> selected<?php endif; ?>>1</option>
             <option value="2"<?php if( $buttonPos == '2' ) : ?> selected<?php endif; ?>>2</option>
         </select>
@@ -101,12 +102,12 @@ function wp04_save_meta_box_data( $post_id ) {
      */
 
     // Check if our nonce is set.
-    if ( ! isset( $_POST['buttons_meta_box_nonce'] ) ) {
+    if ( ! isset( $_POST['wp04_meta_box_nonce'] ) ) {
         return;
     }
 
     // Verify that the nonce is valid.
-    if ( ! wp_verify_nonce( $_POST['buttons_meta_box_nonce'], 'buttons_meta_box' ) ) {
+    if ( ! wp_verify_nonce( $_POST['wp04_meta_box_nonce'], 'wp04_meta_box' ) ) {
         return;
     }
 
@@ -132,7 +133,7 @@ function wp04_save_meta_box_data( $post_id ) {
     /* OK, it's safe for us to save the data now. */
     
     // Make sure that it is set.
-    if ( !isset( $_POST['home_button_label'] ) && !isset( $_POST['home_button_icon'] ) && !isset( $_POST['home_button_type'] ) ) {
+    if ( !isset( $_POST['home_button_label'] ) && !isset( $_POST['home_button_icon'] ) && !isset( $_POST['home_button_type'] ) && !isset( $_POST['home_button_show'] ) && !isset( $_POST['home_button_pos'] ) && !isset( $_POST['subheading'] ) ) {
         return;
     }
 
@@ -150,6 +151,6 @@ function wp04_save_meta_box_data( $post_id ) {
     update_post_meta( $post_id, '_home_button_type',  $home_button_type_data );
     update_post_meta( $post_id, '_home_button_show',  $home_button_show_data );
 	update_post_meta( $post_id, '_home_button_pos',   $home_button_pos_data );
-    update_post_meta( $post_id, '_subheading', $subheading_data );
+    update_post_meta( $post_id, '_subheading',        $subheading_data );
 }
 add_action( 'save_post', 'wp04_save_meta_box_data' );
