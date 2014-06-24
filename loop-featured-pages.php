@@ -7,7 +7,7 @@
  * @since WP-ZeroFour 1.0
  */
 
-$args1 = array(
+$args = array(
 	'meta_key'    => '_home_button_show',
 	'meta_value'  => 'true',
 	'numberposts' => 2,
