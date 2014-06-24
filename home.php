@@ -69,48 +69,10 @@ get_header(); ?>
 
 					</div>
 				</div>
-				<div class="main-wrapper-style2">
-					<div class="inner">
-				
-						<!-- Feature 2 -->
-							<section class="container box-feature2">
-								<div class="row">
-									<div class="6u">
-										<section>
-											<header class="major">
-												<h2>And this is a subheading</h2>
-												<span class="byline">It’s important but clearly not *that* important</span>
-											</header>
-											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. 
-											Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. 
-											Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi 
-											consequat etiam.</p>
-											<footer>
-												<a href="#" class="button medium fa fa-arrow-circle-o-right">Let's do this</a>
-											</footer>
-										</section>
-									</div>
-									<div class="6u">
-										<section>
-											<header class="major">
-												<h2>This is also a subheading</h2>
-												<span class="byline">And is as less important as the other one</span>
-											</header>
-											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. 
-											Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. 
-											Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi 
-											consequat etiam.</p>
-											<footer>
-												<a href="#" class="button medium alt fa fa-info-circle">Wait, what?</a>
-											</footer>
-										</section>
-									</div>
-								</div>
-							</section>
-
-						</div>
-				</div>
-<?php get_template_part( 'loop', 'recent-posts' ); ?>
+<?php 
+get_template_part( 'loop', 'featured-pages' );
+get_template_part( 'loop', 'recent-posts' ); 
+?>
 			</div>
 
 <?php get_footer(); ?>
