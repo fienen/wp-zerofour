@@ -8,6 +8,9 @@
  * @subpackage WP-ZeroFour
  * @since WP-ZeroFour 1.0
  */
+ 
+ $wp04_theme_options = get_option( 'wp04_theme_options' );
+ $wp04_custom_header = $wp04_theme_options['header_img'];
 ?><!DOCTYPE HTML>
 <!--
 	ZeroFour 2.5 by HTML5 UP
@@ -37,7 +40,13 @@
 	<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie9.css"><![endif]-->
 	<!--[if lte IE 8]><script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 7]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie7.css"><![endif]-->
-	<?php wp_head(); ?>
+<?php if( !empty( $wp04_custom_header ) ) : ?>
+	<style>#header-wrapper{background-image:url('<?php echo $wp04_custom_header; ?>');}</style>
+<?php 
+endif;
+
+wp_head(); 
+?>
 </head>
 	<body <?php if( is_home() ) : body_class('homepage'); else: body_class(); endif; ?>>
 
@@ -85,7 +94,6 @@
 
 <?php 
 if( is_home() ) : 
-	$wp04_theme_options       = get_option( 'wp04_theme_options' );
 	$centerpiece_headline     = $wp04_theme_options[ 'centerpiece_headline' ];
 	$centerpiece_subheading   = $wp04_theme_options[ 'centerpiece_subheading' ];
 	$centerpiece_button_label = $wp04_theme_options[ 'centerpiece_button_label' ];
