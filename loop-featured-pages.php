@@ -14,7 +14,7 @@ $args = array(
 	'orderby'     => 'meta_value_num',
 	'post_type'   => 'page'
 );
-$featured_pages = get_posts( $args ) );
+$featured_pages = get_posts( $args );
 ?>
 
 <div class="main-wrapper-style2">
