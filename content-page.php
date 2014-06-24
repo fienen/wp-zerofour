@@ -11,7 +11,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="major">
 		<h2><?php the_title(); ?></h2>
-		<span class="byline"></span>
+<?php
+$subheading = get_post_meta( get_the_ID(), '_subheading', true );
+if( !empty( $subheading ) ) :
+?>
+		<span class="byline"><?php echo $subheading; ?></span>
+<?php endif; ?>
 	</header>  <!-- .major -->
 
 	<div class="entry-content">
