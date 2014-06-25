@@ -30,13 +30,15 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.dropotron.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/config.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/skel.min.js"></script>
+	<!-- script src="<?php echo get_template_directory_uri(); ?>/js/skel.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/skel-panels.min.js"></script>
-	<noscript>
+	<noscript -->
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/skel-noscript.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-desktop.css">
-	</noscript>
+		<link rel="stylesheet" media="(min-width: 481px)" href="<?php echo get_template_directory_uri(); ?>/css/style-desktop.css">
+		<link rel="stylesheet" media="(min-width: 481px) and (max-width: 1000px)" href="<?php echo get_template_directory_uri(); ?>/css/style-1000px.css">
+		<link rel="stylesheet" media="(max-width: 480px)" href="<?php echo get_template_directory_uri(); ?>/css/style-mobile.css">
+	<!-- /noscript -->
 	<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie9.css"><![endif]-->
 	<!--[if lte IE 8]><script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 7]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie7.css"><![endif]-->
